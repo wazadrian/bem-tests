@@ -1,20 +1,22 @@
+@import '../assets/bootstrap.scss';
+
 //color pallet
+//main
+$p-primary: #123456;
+$p-secondary: #456789;
+
+//helpers
 $p-cocoa-brown: #322122;
 $p-tobacco-brown: #756342;
 $p-white: #fff;
 
 //element colors
-$c-header--contact-us: $p-cocoa-brown;
-$c-header--about-us: $p-tobacco-brown;
-$c-header__title: $p-white;
+$c-header-bg-color: $p-primary;
+$c-header-bg-color--contact-us: $p-cocoa-brown; // or $c-header-bg-color--cocoa-brown ?? [page vs color]
+$c-header-bg-color--about-us: $p-tobacco-brown;
+$c-header__title-text: $p-white;
 
-//desktop
-
-$l-header-height--desktop: 175px;
-
-//mobile
-
-$l-header-height--mobile: 125px;
+$l-header-min-height: 175px;
 
 //could be merge to page config??
 $f-family: 'Roboto';
@@ -37,23 +39,29 @@ body {
 
 //actual styles
 .header {
-  min-height: $l-header-height--desktop;
-  @media (max-width: 991px) {
-    min-height: $l-header-height--mobile;
-  }
+  min-height: $l-header-min-height;
+
+  background-color: $c-header-bg-color;
   &--contact-us {
-    background-color: $c-header--contact-us;
+    background-color: $c-header-bg-color--contact-us;
   }
   &--about-us {
-    background-color: $c-header--about-us;
+    background-color: $c-header-bg-color--about-us;
+  }
+  .row {
+    min-height: inherit;
   }
   &__title {
+    @extend .col-lg-4;
     height: inherit;
-    color: white;
+    color: $c-header__title-text;
     text-align: center;
   }
   &__banner {
-    max-width: 100%;
-    min-height: 100%;
+    @extend .col-lg-8, .col--no-gutters, .d-none, .d-lg-block;
+    img {
+      max-width: 100%;
+      min-height: 100%;
+    }
   }
 }
