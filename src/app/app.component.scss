@@ -1,12 +1,12 @@
-//colors
-$cocoa-brown: #322122;
-$tobacco-brown: #756342;
-$white: #fff;
+//color pallet
+$p-cocoa-brown: #322122;
+$p-tobacco-brown: #756342;
+$p-white: #fff;
 
-//elements
-$c-header--contact-us: $cocoa-brown;
-$c-header--about-us: $tobacco-brown;
-$c-header__title: $white;
+//element colors
+$c-header--contact-us: $p-cocoa-brown;
+$c-header--about-us: $p-tobacco-brown;
+$c-header__title: $p-white;
 
 //desktop
 
@@ -17,11 +17,13 @@ $l-header-height--desktop: 175px;
 $l-header-height--mobile: 125px;
 
 //could be merge to page config??
-$f-weight-default: 500;
-$f-weight-strong: 600;
+$f-family: 'Roboto';
+$f-weight-default: 400;
+$f-weight-strong: 500;
 
 //page config
 body {
+  font-family: $f-family;
   font-weight: $f-weight-default;
   strong {
     font-weight: $f-weight-strong;
