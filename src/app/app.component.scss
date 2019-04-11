@@ -39,6 +39,7 @@ body {
 
 //actual styles
 .header {
+  @extend .container;
   min-height: $l-header-min-height;
 
   background-color: $c-header-bg-color;
