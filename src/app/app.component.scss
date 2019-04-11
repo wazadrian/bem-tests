@@ -1,0 +1,57 @@
+//colors
+$cocoa-brown: #322122;
+$tobacco-brown: #756342;
+$white: #fff;
+
+//elements
+$c-header--contact-us: $cocoa-brown;
+$c-header--about-us: $tobacco-brown;
+$c-header__title: $white;
+
+//desktop
+
+$l-header-height--desktop: 175px;
+
+//mobile
+
+$l-header-height--mobile: 125px;
+
+//could be merge to page config??
+$f-weight-default: 500;
+$f-weight-strong: 600;
+
+//page config
+body {
+  font-weight: $f-weight-default;
+  strong {
+    font-weight: $f-weight-strong;
+  }
+}
+
+//bootstrap extensions
+.col--no-gutters {
+  padding: 0;
+}
+
+//actual styles
+.header {
+  min-height: $l-header-height--desktop;
+  @media (max-width: 991px) {
+    min-height: $l-header-height--mobile;
+  }
+  &--contact-us {
+    background-color: $c-header--contact-us;
+  }
+  &--about-us {
+    background-color: $c-header--about-us;
+  }
+  &__title {
+    height: inherit;
+    color: white;
+    text-align: center;
+  }
+  &__banner {
+    max-width: 100%;
+    min-height: 100%;
+  }
+}
